@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # The Pattern
 | Infrastructure       | Interfaces           | Use Cases            | Domain               |
@@ -18,3 +19,6 @@ stuff like connecting to the database daemon through the network, deciding to us
 the repository will have to sort out the details of putting together a single entity from multiple tables, but the clients of the repositories won’t be concerned.
 
 consider updating jira when you start working on a task
+=======
+# clean-arch
+>>>>>>> 1cc1692d6953203fd7ee3914c9a52400cdcc4bd0
