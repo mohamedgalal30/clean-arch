@@ -1,0 +1,113 @@
+{
+  "app": {
+    "id": "test_api",
+    "host": "localhost",
+    "port": "8000",
+    "cors": true,
+    "debug": {
+      "enabled": true,
+      "apm": false,
+      "apm_ip": "",
+      "apm_port": ""
+    },
+    "http_logs": true,
+    "database_log_mode": true
+  },
+  "db": {
+    "redis": {
+      "name": "redis",
+      "driver": "redis",
+      "dsn": "redis:6379",
+      "host": "redis",
+      "port": "6379",
+      "username": "",
+      "password": "",
+      "db_name": "0",
+      "options": {}
+    },
+    "postgres_test_api": {
+      "name": "test",
+      "driver": "postgres",
+      "dsn": "postgres:5432",
+      "host": "postgres",
+      "port": "5432",
+      "username": "postgres",
+      "password": "root",
+      "db_name": "test",
+      "options": {}
+    },
+    "postgres_ticket_api": {
+      "name": "ticket",
+      "driver": "postgres",
+      "dsn": "postgres:5432",
+      "host": "postgres",
+      "port": "5432",
+      "username": "postgres",
+      "password": "root",
+      "db_name": "test",
+      "options": {}
+    },
+    "postgres_hub_api": {
+      "name": "pg_hub",
+      "driver": "postgres",
+      "dsn": "",
+      "host": "postgres",
+      "port": "5432",
+      "username": "postgres",
+      "password": "root",
+      "db_name": "hub",
+      "options": {}
+    },
+    "rabbitmq": {
+      "name": "rabbitmq",
+      "driver": "rabbitmq",
+      "dsn": "amqp://rabbitmq:rabbitmq@rabbitmq:5672",
+      "host": "localhost",
+      "port": "6379",
+      "username": "rabbitmq",
+      "password": "rabbitmq",
+      "db_name": "",
+      "options": {}
+    },
+    "elastic_search": {
+      "name": "elastic_search",
+      "driver": "elastic",
+      "dsn": "http://elasticsearch:9200",
+      "host": "elasticsearch",
+      "port": "9200",
+      "db_name": "",
+      "options": {}
+    }
+  },
+  "options": {
+    "default_data_source": "postgres",
+    "user_api_url": "http://user.api.local",
+    "upload_api_url": "http://uploader.api.local:8000",
+    "max_uploaded_test_attachments": 5,
+    "max_uploaded_tests_attachments_size_mb": 9,
+    "maximum_tests_listing_size": 500,
+    "password_expiration": 2160.0,
+    "locked_test_expiration_in_seconds": 30,
+    "should_send_auto_reply_email_when_agent_open_test_for_first_time": true,
+    "support_mail": "support.test.stage@fly365.com",
+    "mail": {
+      "gmail": {
+        "supportGmailCredentialsPath": "/config/support_mail_credentials.json",
+        "nzSupportMail": "test@fly365.com",
+        "supportMail": "test@fly365.com"
+      },
+      "sync_sent_label": false,
+      "sync_inbox_label": true,
+      "rules": [
+        {
+          "emails": ["ahmed.abdraboh+1@fly365.com"],
+          "disableNotification": true,
+          "disableSendAutoReplyWhenAgentOpenTicket": true,
+          "status": "Tormado"
+        }
+      ],
+      "separate_tests_emails": ["ahmed.abdraboh+1@fly365.com"]
+    },
+    "radar_api_url": "http://radar.api.local"
+  }
+}

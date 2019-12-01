@@ -1,0 +1,9 @@
+FROM golang:1.13
+
+ADD app app
+
+ADD config config
+
+EXPOSE 8000
+
+CMD ./app

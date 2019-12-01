@@ -1,0 +1,7 @@
+FROM fly365dotcom/base-golang-dev
+
+ADD app app/
+WORKDIR /app
+ADD config config
+
+CMD ["tail", "-f", "/dev/null"]

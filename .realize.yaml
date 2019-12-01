@@ -1,0 +1,29 @@
+settings:
+  legacy:
+    force: false
+    interval: 0s
+schema:
+- name: api
+  path: .
+  commands:
+    fmt:
+      status: true
+    install:
+      status: true
+      method: go build -v -o build_api
+    run:
+      status: true
+      method: ./build_api
+  watcher:
+    extensions:
+    - go
+    - json
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - .circleci
+    - .idea
+    - vendor
+    - ops
