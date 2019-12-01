@@ -1,3 +1,7 @@
+# What is this?
+   - this is an example trying to apply Uncle Bob’s concept of [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) by demonstrating how its principles could be applied to an actual Go application.
+# Architecture
+The architecture will be separated into four layers: domain, use cases, interfaces and infrastructure.
 # The Pattern
 | Infrastructure       | Interfaces           | Use Cases            | Domain               |
 |----------------------|----------------------|----------------------|----------------------|
