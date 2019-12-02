@@ -13,7 +13,6 @@ type IRadarMsRepo interface {
 type TicketUsecase struct {
 	ticketRepo entity.ITicketDbRepo
 	radarMs    IRadarMsRepo
-	//Logger     Logger
 }
 
 func NewTicketUsecase() *TicketUsecase {
@@ -23,10 +22,6 @@ func NewTicketUsecase() *TicketUsecase {
 		ticketRepo: ticketRepo,
 		radarMs:    radarMs,
 	}
-}
-
-type Logger interface {
-	Log(args ...interface{})
 }
 
 type Ticket struct {
@@ -42,7 +37,6 @@ func (ucase *TicketUsecase) Add(number int, email string, body string) error {
 		flybase.App().GetLogger().Error(err.Error())
 	}
 	ucase.radarMs.LogCreateTicketActivity(ticket)
-	//ucase.Logger.Log("Ticket Created")
 	return nil
 }
 

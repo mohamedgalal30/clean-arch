@@ -51,10 +51,12 @@ This layer will have general-purpose code that can be used in any other applicat
 | application-agnostic | application-specific | application-specific | application-agnostic |
 | business-agnostic    | business-agnostic    | business-specific    | business-specific    |
 
-
 For every part in every layer, there are three questions of interest: where is it used, where is its interface, where is its implementation?
 
 If we look at the TicketDbRepo, the answers are as follows: 
 - it’s used by the use cases layer, 
 - its interface belongs to the domain layer, 
 - and its implementation belongs to the interfaces/repository layer.
+
+## TODO
+- transformers between layers
