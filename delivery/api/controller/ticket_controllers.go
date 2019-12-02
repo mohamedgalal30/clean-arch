@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"ticket/entity"
-	"ticket/interfaces/api/errors"
+	"ticket/delivery/api/errors"
 	"ticket/usecase"
 )
 

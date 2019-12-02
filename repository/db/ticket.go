@@ -1,4 +1,4 @@
-package repository
+package db
 
 import (
 	"github.com/jinzhu/gorm"
@@ -11,7 +11,7 @@ type DbRepo struct {
 	DbHandler *gorm.DB
 }
 
-type DbTicketRepo DbRepo
+type TicketDbRepo DbRepo
 
 var dbHandler *gorm.DB
 
@@ -19,13 +19,13 @@ func InitDbTicketRepo(dbHndlr *gorm.DB) {
 	dbHandler = dbHndlr
 }
 
-func NewDbTicketRepo() *DbTicketRepo {
-	dbTicketRepo := new(DbTicketRepo)
+func NewDbTicketRepo() *TicketDbRepo {
+	dbTicketRepo := new(TicketDbRepo)
 	dbTicketRepo.DbHandler = dbHandler
 	return dbTicketRepo
 }
 
-func (repo *DbTicketRepo) Add(ticket *entity.Ticket) error {
+func (repo *TicketDbRepo) Add(ticket *entity.Ticket) error {
 	err := repo.DbHandler.Create(ticket)
 	if err.Error != nil {
 		return err.Error
@@ -33,6 +33,6 @@ func (repo *DbTicketRepo) Add(ticket *entity.Ticket) error {
 	return nil
 }
 
-func (repo *DbTicketRepo) FindAll() []entity.Ticket {
+func (repo *TicketDbRepo) FindAll() []entity.Ticket {
 	return []entity.Ticket{}
 }

@@ -4,7 +4,7 @@ import (
 	"github.com/fly365com/flybase"
 )
 
-type ITicketRepo interface {
+type ITicketDbRepo interface {
 	Add(ticket *Ticket) error
 	FindAll() []Ticket
 }

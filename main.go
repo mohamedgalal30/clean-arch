@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	"ticket/interfaces/api"
+	"ticket/delivery/api"
 )
 
 func main() {

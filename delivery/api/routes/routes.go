@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/fly365com/flybase"
-	"ticket/interfaces/api/controller"
+	"ticket/delivery/api/controller"
 )
 
 var TicketCtrl controller.TicketController

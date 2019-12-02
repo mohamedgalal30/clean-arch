@@ -3,21 +3,21 @@ package usecase
 import (
 	"github.com/fly365com/flybase"
 	"ticket/entity"
-	"ticket/interfaces/ms"
-	"ticket/interfaces/repository"
+	"ticket/repository/db"
+	"ticket/repository/ms"
 )
 
-type IRadarMs interface {
+type IRadarMsRepo interface {
 	LogCreateTicketActivity(ticket *entity.Ticket)
 }
 type TicketUsecase struct {
-	ticketRepo entity.ITicketRepo
-	radarMs    IRadarMs
+	ticketRepo entity.ITicketDbRepo
+	radarMs    IRadarMsRepo
 	//Logger     Logger
 }
 
 func NewTicketUsecase() *TicketUsecase {
-	ticketRepo := repository.NewDbTicketRepo()
+	ticketRepo := db.NewDbTicketRepo()
 	radarMs := ms.NewRadarMs()
 	return &TicketUsecase{
 		ticketRepo: ticketRepo,

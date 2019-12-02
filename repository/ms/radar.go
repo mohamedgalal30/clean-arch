@@ -5,14 +5,14 @@ import (
 	"ticket/entity"
 )
 
-type RadarMs struct {
+type RadarMsRepo struct {
 }
 
-func NewRadarMs() *RadarMs {
-	return &RadarMs{}
+func NewRadarMs() *RadarMsRepo {
+	return &RadarMsRepo{}
 }
 
-func (rdrMs *RadarMs) LogCreateTicketActivity(ticket *entity.Ticket) {
+func (rdrMs *RadarMsRepo) LogCreateTicketActivity(ticket *entity.Ticket) {
 	logActivity := activityLog.LogActivity{
 		Identifier: ticket.Email,
 		Action:     activityLog.LOG_ACTIVITY_CREATE_TICKET,
